@@ -1,0 +1,96 @@
+.close_popup{display:none}
+.popup_add{position:fixed;z-index:1;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5)}
+.popup_add-box{width:674px;background:#FFF;margin:0 auto;background:#FFF;border-radius:15px}
+.popup_add-head{padding:17px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #F5F5F5}
+.popup_add-head-text{text-transform:uppercase;font-weight:400}
+.popup_add-head-icon{cursor:pointer}
+.popup_add-content{padding:23px 37px 37px}
+.form_import{position:relative;margin-bottom:28px}
+.validate_error{position:absolute;color:red;font-size:13px;bottom:-20px;left:0}
+.form_import-lable{margin-bottom:4px}
+.form_import-input{width:100%;border:1px solid #BCBEC6;border-radius:6px;padding:8px 22px}
+.form_import-input input{border:none;outline:none;width:100%;line-height:24px;font-size:14px}
+.form_import-select .select2-container .select2-selection--single{height:41px}
+.form_import-select .select2-container--default .select2-selection--single .select2-selection__rendered{line-height:40px;font-size:14px;padding-left:20px}
+.form_import-select .select2-container--default .select2-selection--single .select2-selection__arrow{height:40px}
+.from_import-textarea{width:100%;border:1px solid #BCBEC6;border-radius:6px;height:95px;padding: 10px 12px;}
+.form_image-click{color:#6ECB63;cursor:pointer}
+.form_image{margin-bottom:32px}
+.btn_chung{width:164px;height:44px;border-radius:40px;font-size:14px;margin:0 10px;cursor:pointer}
+.form_btn{display:flex;justify-content:center}
+.btn_huy{color:#00ADE8;border:1px solid #00ADE8;background:#FFF;text-align:center;line-height:43px}
+.btn_add{background:#00ADE8;color:#FFF;outline:none;border:none}
+.po_relative{position: relative;}
+.characters{position: absolute;bottom: 10%;right: 5%;font-style: italic;color: #b1aeae;}
+.characters-text{font-size: 12px;}
+
+
+/* PUPOP Success */
+.success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0,0,0,0.5);
+}
+.success_padding{
+    width: 564px;
+    height: 328px;
+    padding: 25px 27px 72px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px rgba(136, 152, 170, 0.2);
+    border-radius: 16px;
+    margin: 150px auto 0;
+}
+.success_close {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 29px;
+}
+.success_close img{width: 20px;height: 20px;}
+.success_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.success_main-img{width: 120px;height: 120px;margin-bottom: 25px;}
+.success_main-img img{width: 100%;height: 100%;}
+
+/* POPUP Delete */
+.colorDeleteProduct{color: #FF4D4D;}
+#delete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0,0,0,0.5);
+}
+.delete_padding{
+    padding: 58px 105px 36px;
+    background: #FFF;
+    width: 610px;
+    height: 376px;
+    margin: 150px auto 0;
+    box-shadow: 0px 4px 8px rgba(136, 152, 170, 0.2);
+    border-radius: 16px;
+}
+.delete_main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+.delete_img{width: 92px;height: 92px;margin: 0 auto;}
+.delete_img img{width: 100%;height: 100%;}
+.delete_text{font-size: 16px;color: #62677A;font-weight: 400;text-align: center;}
+.delete_main_btn {display: flex;justify-content: space-evenly;}
+.delete_btn-chung{width: 166px;height: 44px;border-radius: 40px;font-weight: 500;font-size: 14px;text-align: center;line-height: 43px;cursor: pointer;}
+.delete_btn-huy{border: 1px solid #62677A;color: #62677A;}
+.delete_btn-xoa{background: #FF4D4D;color: #FFF;border: none;}
+
+
+
+

@@ -20,5 +20,5 @@ Route::resource('/', WelcomeController::class);
 
 Route::group(['prefix' => 'admin', 'name' => 'admin'], function(){
     Route::resource('product', ProductController::class);
-    Route::get('product/{name}/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('product/{id}', [ProductController::class, 'show'])->name('product.show');
 });

@@ -143,5 +143,9 @@ class ProductService
         return $this->productRepository->delete($id);
     }
 
+    public function getProductSuggestion($productID, $id_category){
+        return $this->productRepository->productSuggestion($productID, $id_category);
+    }
+
 }
 ?>

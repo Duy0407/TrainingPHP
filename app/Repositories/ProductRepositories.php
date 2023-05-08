@@ -62,6 +62,12 @@ class ProductRepositories implements ProductInterface
         }
     }
 
+    // Lấy sản phẩm gợi ý
+    public function productSuggestion($productID, $id_category)
+    {
+        return $this->productModel->where('id_category', $id_category)->where('id', '!=', $productID)->orderByDesc('updated_at')->take(3)->get();
+    }
+
 
     // Thêm ảnh slider
     public function addImgSliderProduct($data_img)

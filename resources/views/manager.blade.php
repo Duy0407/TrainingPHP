@@ -30,7 +30,7 @@
                                 <img src="uploads/products/{{$product->id .'/'. $product->images}}" alt="">
                             </div>
                             <div class="item_info">
-                                <a href="{{ route('product.show', ['name' => Str::slug($product->name), 'id' => $product->id]) }}">
+                                <a href="{{ route('product.show', $product->id) }}">
                                     <h3 class="item_info-title">{{$product->name}}</h3>
                                 </a>
 

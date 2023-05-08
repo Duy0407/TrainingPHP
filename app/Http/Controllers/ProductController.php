@@ -73,7 +73,18 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = $this->cateService->getAllCategory();
+        $facturers = $this->facturerServices->getAllFacturer();
+
+
+        // Gợi ý sản phẩm
+
+        $detail = $this->productService->findProduct($id);
+        $idProduct = $detail->id;
+        $idCate = $detail->id_category;
+        $imgSliderProducts = $this->productService->GetAllImgSliderProduct($id);
+        $productSuggestions = $this->productService->getProductSuggestion($idProduct, $idCate);
+        return view('product_details', compact('categories', 'facturers', 'detail', 'productSuggestions', 'imgSliderProducts'));
     }
 
     /**

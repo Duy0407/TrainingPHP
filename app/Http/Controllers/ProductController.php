@@ -112,6 +112,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->productService->deleteProduct($id);
+        return redirect()->route('product.index')->with('successDelete', 'Xóa sản phẩm thành công');
     }
 }

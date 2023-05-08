@@ -11,7 +11,8 @@ interface ProductInterface
     public function create($data);
 
     public function update($data, $id);
-
+    
+    public function delete($id);
 
 
     // Thêm ảnh side

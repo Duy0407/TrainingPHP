@@ -55,7 +55,6 @@ class ProductService
         $product = $this->productRepository->find($id);
         $productID = $product->id;
 
-
         if ($product){
             if (isset($r['idImageDelete'])) {
                 $arrayImgSliderDelete = array_filter($r['idImageDelete']);
@@ -120,6 +119,28 @@ class ProductService
 
             return $this->productRepository->update($data, $id);
         }
+    }
+
+    // Xóa sản phẩm
+    public function deleteProduct($id){
+        $product = $this->productRepository->find($id);
+
+        $folderPath = 'uploads/products/'.$product->id;
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+
+        $files = scandir($folderPath);
+        foreach ($files as $file) {
+            $fileExtension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+            if (in_array($fileExtension, $allowedExtensions)) {
+                unlink($folderPath . '/' . $file);
+            }
+        }
+
+        if (is_dir($folderPath)) {
+            rmdir($folderPath);
+        }
+
+        return $this->productRepository->delete($id);
     }
 
 }

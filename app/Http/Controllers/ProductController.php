@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\CategoryService;
+use App\Services\FacturerService;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
@@ -11,9 +14,32 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    protected $cateService;
+    protected $facturerServices;
+    protected $productService;
+
+    public function __construct(CategoryService $cateService, FacturerService $facturerServices, ProductService $productService){
+        $this->cateService = $cateService;
+        $this->facturerServices = $facturerServices;
+        $this->productService = $productService;
+    }
+
+    public function index(Request $request)
     {
-        //
+        $keyword = $request->get('search');
+
+        $categoryId = intval($request['category']);
+        
+        $manufacturerId = $request['manufacturer'];
+
+
+        $categories = $this->cateService->getAllCategory();
+        $facturers = $this->facturerServices->getAllFacturer();
+        $products = $this->productService->getAllProduct($keyword, $categoryId, $manufacturerId);
+
+
+        return view('manager', compact('categories','facturers','products'));
     }
 
     /**
@@ -34,7 +60,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->productService->createProduct($request->all());
+        return redirect()->back()->with('success', 'Thêm thành công');
     }
 
     /**

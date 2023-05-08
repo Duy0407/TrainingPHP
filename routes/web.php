@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::resource('/', WelcomeController::class);
+// Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
+Route::group(['prefix' => 'admin', 'name' => 'admin'], function(){
+    Route::resource('product', ProductController::class);
+    Route::get('product/{name}/{id}', [ProductController::class, 'show'])->name('product.show');
 });
